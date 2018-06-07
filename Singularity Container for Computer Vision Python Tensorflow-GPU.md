@@ -12,7 +12,7 @@ Reference: https://docs.hpc.arizona.edu/display/UAHPC/Singularity+Tutorials
 	1) download cudnn6.0 for cuda8 (https://developer.nvidia.com/cudnn)
 	2) prepare recipe.def including Computer Vision packages
 -----------------------------------------------------------------------------------------
-'''
+''' python
 BootStrap: yum
 OSVersion: 7
 MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearch/
