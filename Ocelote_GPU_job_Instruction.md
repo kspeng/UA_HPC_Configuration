@@ -14,6 +14,7 @@ This is a note for Ocelote GPU job allocation on HPC of University of Arizona. T
 	- ngpus: requested number of gpu
 	- cput: maximum of 3200 hours total cpu time for 1-processor job
 	- walltime: maximum of 240 hours walltime for the job
+	
 	ex. 
 	```
 	qsub -I -N monodepth -m  bea -W group_list=ditzler -q windfall -l select=1:ncpus=2:mem=32gb:ngpus=1 -l cput=240:0:0 -l walltime=240:0:0
@@ -28,5 +29,6 @@ This is a note for Ocelote GPU job allocation on HPC of University of Arizona. T
 	```
 4 run your proj within singularity img 
 	```
-	singularity run --nv ~/workspace/envImg/recipe.img mycode.py
+
 	```
+	singularity run --nv ~/workspace/envImg/recipe.img mycode.py
