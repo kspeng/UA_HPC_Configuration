@@ -60,13 +60,16 @@ Include: yum wget
 -----------------------------------------------------------------------------------------
 
 3. Create the Singularity container using the recipe file. The image created was 1.5GB(recipe.img).
+	```
 	sudo singularity build recipe.img recipe.def
-
+	```
+	
 4. sftp to hpc, put recipe.img into hpc.
+	```
 	sftp NetId@filexfer.hpc.arizona.edu 
 	cd ~/workspace/envImg/
 	put rescipe.img
-	
+	```
 5. get into hpc server to run singularity image in interactive mode
 	```
 	ssh NetId@hpc.arizona.edu
