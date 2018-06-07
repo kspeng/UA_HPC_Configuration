@@ -13,48 +13,48 @@ Reference: https://docs.hpc.arizona.edu/display/UAHPC/Singularity+Tutorials
 	2) prepare recipe.def including Computer Vision packages
 -----------------------------------------------------------------------------------------
 '''
-> BootStrap: yum
-> OSVersion: 7
-> MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearch/
-> Include: yum wget
-> %setup
->    # commands to be executed on host outside container during bootstrap
->    cp ./packages/cudnn-8.0-linux-x64-v6.tgz $SINGULARITY_ROOTFS
-> %test
->    # commands to be executed within container at close of bootstrap process
->    exec /usr/bin/python3.5 --version
-> %runscript
->    # commands to be executed when the container runs
->    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
->    echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
->    export PATH=/usr/local/cuda/bin:$PATH
->    echo "PATH: $PATH"
->    echo "Arguments received: $*"
->    exec /usr/bin/python3.5 "$@"
-> %post
->    # commands to be executed inside container during bootstrap
->    yum -y install epel-release
->    yum -y install https://centos7.iuscommunity.org/ius-release.rpm
->    yum -y install http://developer.download.nvidia.com/compute/cuda/repos/rhel7/x86_64/cuda-repo-rhel7-8.0.61-1.x86_64.rpm
->    # solve python opencv cv2 issue
->    yum -y install libSM-1.2.2-2.el7.x86_64 --setopt=protected_multilib=false 	
->    yum clean all && yum makecache
->    yum -y install wget python35u python35u-pip libgomp cuda-runtime-8-0
->    ln -s /usr/local/cuda-8.0 /usr/local/cuda
->    # install cudnn
->    tar -xf /cudnn-8.0-linux-x64-v6.tgz -C /usr/local
->    rm /cudnn-8.0-linux-x64-v6.tgz
->    # install tensorflow
->    pip3.5 install --upgrade pip
->    pip3.5 install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.4.1-cp35-cp35m-linux_x86_64.whl
->    pip3.5 install pandas 
->    pip3.5 install keras
->    pip3.5 install Pillow
->    pip3.5 install scipy 
->    pip3.5 install matplotlib
->    pip3.5 install opencv-python
->    # in-container bind points for shared filesystems
->    mkdir -p /extra /xdisk /uaopt /cm/shared
+BootStrap: yum
+OSVersion: 7
+MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearch/
+Include: yum wget
+%setup
+   # commands to be executed on host outside container during bootstrap
+   cp ./packages/cudnn-8.0-linux-x64-v6.tgz $SINGULARITY_ROOTFS
+%test
+   # commands to be executed within container at close of bootstrap process
+   exec /usr/bin/python3.5 --version
+%runscript
+   # commands to be executed when the container runs
+   export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+   echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
+   export PATH=/usr/local/cuda/bin:$PATH
+   echo "PATH: $PATH"
+   echo "Arguments received: $*"
+   exec /usr/bin/python3.5 "$@"
+%post
+   # commands to be executed inside container during bootstrap
+   yum -y install epel-release
+   yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+   yum -y install http://developer.download.nvidia.com/compute/cuda/repos/rhel7/x86_64/cuda-repo-rhel7-8.0.61-1.x86_64.rpm
+   # solve python opencv cv2 issue
+   yum -y install libSM-1.2.2-2.el7.x86_64 --setopt=protected_multilib=false 	
+   yum clean all && yum makecache
+   yum -y install wget python35u python35u-pip libgomp cuda-runtime-8-0
+   ln -s /usr/local/cuda-8.0 /usr/local/cuda
+   # install cudnn
+   tar -xf /cudnn-8.0-linux-x64-v6.tgz -C /usr/local
+   rm /cudnn-8.0-linux-x64-v6.tgz
+   # install tensorflow
+   pip3.5 install --upgrade pip
+   pip3.5 install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.4.1-cp35-cp35m-linux_x86_64.whl
+   pip3.5 install pandas 
+   pip3.5 install keras
+   pip3.5 install Pillow
+   pip3.5 install scipy 
+   pip3.5 install matplotlib
+   pip3.5 install opencv-python
+   # in-container bind points for shared filesystems
+   mkdir -p /extra /xdisk /uaopt /cm/shared
 '''
 -----------------------------------------------------------------------------------------
 
