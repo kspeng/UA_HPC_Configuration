@@ -8,10 +8,11 @@ Reference: https://docs.hpc.arizona.edu/display/UAHPC/Singularity+Tutorials
 1. Install Singularity on linux workstation - http://singularity.lbl.gov/install-linux
 
 2. Create the recipe file (.def file) on a workstation(linux only) with root authority. Let's call it recipe.def.
-	# Content: keras+tensorflow_gpu-1.4.1-cp35-cuda8-cudnn6
+	** Content: keras+tensorflow_gpu-1.4.1-cp35-cuda8-cudnn6 **
 	1) download cudnn6.0 for cuda8 (https://developer.nvidia.com/cudnn)
 	2) prepare recipe.def including Computer Vision packages
 -----------------------------------------------------------------------------------------
+'''
 > BootStrap: yum
 > OSVersion: 7
 > MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearch/
@@ -54,7 +55,7 @@ Reference: https://docs.hpc.arizona.edu/display/UAHPC/Singularity+Tutorials
 >    pip3.5 install opencv-python
 >    # in-container bind points for shared filesystems
 >    mkdir -p /extra /xdisk /uaopt /cm/shared
-
+'''
 -----------------------------------------------------------------------------------------
 
 3. Create the Singularity container using the recipe file. The image created was 1.5GB(recipe.img).
