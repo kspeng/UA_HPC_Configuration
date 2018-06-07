@@ -27,7 +27,7 @@ This is a note for Ocelote GPU job allocation on HPC of University of Arizona. T
 	```
 	cd ~/workspace/yourproj/
 	```
-4 run your proj within singularity img
+4. run your proj within singularity img
 
 	```
 	singularity run --nv ~/workspace/envImg/recipe.img mycode.py
