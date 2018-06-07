@@ -1,8 +1,9 @@
-This note is a record of how to setup the Virtual Environment - Singularity Container for Computer Vision Python Tensorflow-GPU. The deployment platform is UofA HPC server.
+# Brief
+This note is a record of how to setup the Virtual Environment - Singularity Container for Computer Vision Python Tensorflow-GPU. The deployment platform is UofA HPC server. 
 
 Reference: https://docs.hpc.arizona.edu/display/UAHPC/Singularity+Tutorials
 
-Steps:
+# Steps
 
 1. Install Singularity on linux workstation - http://singularity.lbl.gov/install-linux
 
