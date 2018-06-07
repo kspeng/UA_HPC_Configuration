@@ -12,7 +12,7 @@ Reference: https://docs.hpc.arizona.edu/display/UAHPC/Singularity+Tutorials
 	1) download cudnn6.0 for cuda8 (https://developer.nvidia.com/cudnn)
 	2) prepare recipe.def including Computer Vision packages
 -----------------------------------------------------------------------------------------
-```python
+```
 BootStrap: yum
 OSVersion: 7
 MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearch/
@@ -71,11 +71,11 @@ Include: yum wget
 	ssh NetId@hpc.arizona.edu
 	Ocelote
 	cd ~/workspace/proj/
-	# setup gpu resource
+	```# setup gpu resource
 	qsub -I -N monodepth -m  bea -W group_list=ditzler -q windfall -l select=1:ncpus=28:mem=32gb:ngpus=1 -l cput=1:0:0 -l walltime=1:0:0
-	# load singularity module
+	```# load singularity module
 	module load singularity
-	# run your proj within singularity img 
+	```# run your proj within singularity img 
 
 6. singularity run --nv ~/workspace/envImg/recipe.img mycode.py
 
