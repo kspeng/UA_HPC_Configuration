@@ -68,15 +68,15 @@ Include: yum wget
 	put rescipe.img
 	
 5. get into hpc server to run singularity image in interactive mode
+	```
 	ssh NetId@hpc.arizona.edu
 	Ocelote
 	cd ~/workspace/proj/
-	```# setup gpu resource
+	# setup gpu resource
 	qsub -I -N monodepth -m  bea -W group_list=ditzler -q windfall -l select=1:ncpus=28:mem=32gb:ngpus=1 -l cput=1:0:0 -l walltime=1:0:0
-	```# load singularity module
+	# load singularity module
 	module load singularity
-	```# run your proj within singularity img 
-
-6. singularity run --nv ~/workspace/envImg/recipe.img mycode.py
-
+	# run your proj within singularity img 
+	singularity run --nv ~/workspace/envImg/recipe.img mycode.py
+	```
 
