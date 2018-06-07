@@ -20,6 +20,7 @@ Reference: https://docs.hpc.arizona.edu/display/UAHPC/Singularity+Tutorials
 	- keras
 	- tensorflow 1.4.1
 	
+	**Flow**
 	1) download cudnn6.0 for cuda8 (https://developer.nvidia.com/cudnn)
 	2) prepare recipe.def including Computer Vision packages
 -----------------------------------------------------------------------------------------
