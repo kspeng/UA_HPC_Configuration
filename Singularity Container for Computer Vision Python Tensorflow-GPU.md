@@ -23,7 +23,6 @@ Reference: https://docs.hpc.arizona.edu/display/UAHPC/Singularity+Tutorials
 	**Flow**
 	1) download cudnn6.0 for cuda8 (https://developer.nvidia.com/cudnn)
 	2) prepare recipe.def including Computer Vision packages
------------------------------------------------------------------------------------------
 ```
 BootStrap: yum
 OSVersion: 7
@@ -68,8 +67,6 @@ Include: yum wget
    # in-container bind points for shared filesystems
    mkdir -p /extra /xdisk /uaopt /cm/shared
 ```
-
------------------------------------------------------------------------------------------
 
 3. Create the Singularity container using the recipe file. The image created was 1.5GB(recipe.img).
 	```
