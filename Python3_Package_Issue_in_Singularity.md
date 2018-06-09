@@ -10,7 +10,11 @@ There is no way to install python-tkinter for python3 in Singularity Container a
   import matplotlib.pyplot as plt
   ```
 ### opencv-python: ImportError: No module named 'cv'
-When install opencv-python for python3.5 in th container, the cv is not included and it always shows no module named 'cv'. So far, the only way is import cv2 without cv.
+When install opencv-python for python3.5 in th container, we must incluse following line to solve link issue:
+  ```
+  yum -y install libSM-1.2.2-2.el7.x86_64 --setopt=protected_multilib=false 
+  ```
+Then we can use opencv correctly. However, the cv is not included and it always shows no module named 'cv'. So far, the only way is import cv2 without cv.
   ```
   import cv2
   ```  
