@@ -9,3 +9,8 @@ There is no way to install python-tkinter for python3 in Singularity Container a
   matplotlib.use('Agg')
   import matplotlib.pyplot as plt
   ```
+### opencv-python: ImportError: No module named 'cv'
+When install opencv-python for python3.5 in th container, the cv is not included and it always shows no module named 'cv'. So far, the only way is import cv2 without cv.
+  ```
+  import cv2
+  ```  
