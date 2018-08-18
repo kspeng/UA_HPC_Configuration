@@ -35,6 +35,7 @@ Reference: https://docs.hpc.arizona.edu/display/UAHPC/Singularity+Tutorials
 	
 	**Flow**
 	1) download cudnn6.0 for cuda8 (https://developer.nvidia.com/cudnn)
+	=> cuDNN v6.0 Runtime Library for Ubuntu16.04 (Deb)
 	2) prepare recipe.def including Computer Vision packages
 	```
 	BootStrap: yum
