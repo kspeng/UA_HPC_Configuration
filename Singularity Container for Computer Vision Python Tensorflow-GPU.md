@@ -7,7 +7,8 @@ Reference: https://docs.hpc.arizona.edu/display/UAHPC/Singularity+Tutorials
 
 1. Install Singularity on linux workstation - http://singularity.lbl.gov/install-linux
 
-	**<Script> singularity_install.sh**
+	**singularity_install.sh**
+	```	
 	#!/bin/bash
 	VERSION=2.6.0
 	wget https://github.com/singularityware/singularity/releases/download/$VERSION/singularity-$VERSION.tar.gz
@@ -17,6 +18,7 @@ Reference: https://docs.hpc.arizona.edu/display/UAHPC/Singularity+Tutorials
 	./configure --prefix=/usr/local
 	make
 	sudo make install
+	```	
 
 2. Create the recipe file (.def file) on a workstation(linux only) with root authority. Let's call it recipe.def.
 
