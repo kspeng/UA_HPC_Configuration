@@ -87,6 +87,7 @@ Reference: https://docs.hpc.arizona.edu/display/UAHPC/Singularity+Tutorials
 3. Create the Singularity container using the recipe file. The image created was 1.5GB(recipe.img).
 	```
 	sudo singularity build recipe.img recipe.def
+	sudo singularity build --writable ubuntu.simg  docker://ubuntu
 	```
 	
 4. sftp to hpc, put recipe.img into hpc.
