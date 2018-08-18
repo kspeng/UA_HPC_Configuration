@@ -6,7 +6,8 @@ Reference: https://docs.hpc.arizona.edu/display/UAHPC/Singularity+Tutorials
 ## Steps
 
 1. Install Singularity on linux workstation - http://singularity.lbl.gov/install-linux
-<Script> singularity_install.sh
+
+	**<Script> singularity_install.sh**
 	#!/bin/bash
 	VERSION=2.6.0
 	wget https://github.com/singularityware/singularity/releases/download/$VERSION/singularity-$VERSION.tar.gz
